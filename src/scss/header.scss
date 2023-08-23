@@ -3,7 +3,8 @@
   position: sticky;
   top: 0;
   background-color: #fff;
-  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px rem(4) rem(12) 0px rgba(0, 0, 0, 0.1);
+  z-index: 40;
 }
 
 .top-head {
@@ -17,15 +18,15 @@
   }
 
   @media (max-width: $mobile) {
-    grid-template-columns: 1fr rem(110) rem(38);
+    grid-template-columns: 1fr rem(115) rem(38);
     grid-template-rows: 1fr 1fr;
     padding: rem(2) 0;
   }
 
   button {
-    font-size: 16px;
+    font-size: rem(16);
     font-weight: 800;
-    line-height: 160%;
+    line-height: 1.6;
     color: $blueColor;
   }
 
@@ -39,11 +40,10 @@
   }
   &__form {
     position: relative;
-    border: 2px solid $blueColor;
-    border-radius: 12px;
+    border: rem(2) solid $blueColor;
+    border-radius: rem(12);
     overflow: hidden;
     align-self: center;
-
     height: rem(48);
     display: grid;
     grid-template-columns: rem(50) 1fr;
@@ -57,9 +57,14 @@
       width: 100%;
       outline: none;
 
+      &::placeholder {
+        transition: all 0.3s ease;
+      }
+
       &:focus {
         &::placeholder {
           opacity: 0;
+          transform: translateX(5%);
         }
       }
 
@@ -71,7 +76,6 @@
     @media (max-width: $mobile) {
       order: 4;
       grid-column: span 3;
-
       height: rem(40);
       margin-bottom: rem(12);
     }
@@ -116,6 +120,7 @@
       display: none;
     }
   }
+
   &__buttons {
     overflow: hidden;
     align-self: center;
@@ -137,6 +142,7 @@
           padding-left: rem(32);
         }
       }
+
       &:last-child {
         border-radius: 0 rem(12) rem(12) 0;
         background-color: $bgLightColor;
@@ -161,6 +167,7 @@
     padding: rem(14);
     background: $bgLightColor;
     border-radius: rem(12);
+
     transition: background 0.3s ease 0s;
     align-self: center;
     z-index: 5;
@@ -170,13 +177,15 @@
     }
 
     @media (max-width: $pc) {
-      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       max-width: 58px;
     }
 
     @media (max-width: $mobile) {
-      display: inline-block;
-      max-width: 32px;
+      width: 42px;
+      height: 42px;
       padding: rem(8);
       border-radius: rem(8);
     }
@@ -203,13 +212,10 @@
   &__item {
     position: relative;
     padding-bottom: rem(16);
-    transition:
-      color 0.3s ease 0s,
-      transform 0.3s ease 0.3s;
+    transition: color 0.3s ease 0s;
 
     &:hover {
       color: $blueHoverColor;
-      transform: translate(0, rem(-2));
     }
 
     &.ac-link {
@@ -251,11 +257,17 @@
     padding-top: rem(24);
     padding-bottom: rem(22);
     transform: translateX(rem(32));
+    opacity: 0;
+    transition: opacity 0.6s ease 0.8s;
 
     @media (max-width: $mobile) {
       padding-top: rem(11);
       padding-bottom: rem(11);
       transform: translateX(rem(15));
+    }
+
+    .menu-open & {
+      opacity: 1;
     }
   }
 
@@ -280,8 +292,8 @@
     position: relative;
     opacity: 0;
     transition:
-      right 0.9s ease 0s,
-      opacity 1s ease 0s;
+      right 0.3s ease 0s,
+      opacity 0.3s ease 0s;
 
     @media (max-width: $mobile) {
       min-width: 100%;
@@ -290,22 +302,27 @@
     }
 
     &:nth-child(2) {
-      transition-delay: 0.3s;
+      transition-delay: 0.2s;
     }
     &:nth-child(3) {
-      transition-delay: 0.5s;
+      transition-delay: 0.3s;
     }
     &:nth-child(4) {
-      transition-delay: 0.7s;
+      transition-delay: 0.4s;
     }
     &:nth-child(5) {
-      transition-delay: 0.9s;
+      transition-delay: 0.5s;
     }
     &:nth-child(6) {
-      transition-delay: 1.2s;
+      transition-delay: 0.6s;
     }
     &:nth-child(7) {
-      transition-delay: 1.4s;
+      transition-delay: 0.7s;
+    }
+
+    .menu-open & {
+      bottom: 0;
+      opacity: 1;
     }
   }
 
@@ -322,40 +339,41 @@
     transition:
       right 0.9s ease 0s,
       opacity 1s ease 0s;
-    transition-delay: 1.9s;
+    transition-delay: 0.8s;
 
     @media (max-width: $mobile) {
       min-width: 100%;
       padding: rem(16) rem(15);
       font-size: rem(16);
     }
+
+    .menu-open & {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -100vw;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background: #2259b433;
+    opacity: 0;
+  }
+
+  .menu-open & {
+    right: 0;
+    z-index: 2;
+
+    &::before {
+      opacity: 1;
+    }
   }
 }
 
-html.menu-open .menu-drop {
-  right: 0;
-  z-index: 2;
-
-  &__item {
-    bottom: 0;
-    opacity: 1;
-  }
-
-  &__see {
-    bottom: 0;
-    opacity: 1;
-  }
-}
-
-html.menu-open .wrapper {
-  background: rgba(34, 90, 180, 0.206);
-}
-html.menu-open .header {
-  background-color: rgba(34, 90, 180, 0.05);
-}
-html.menu-open input {
-  background-color: rgba(34, 90, 180, 0.02);
-}
 //====================================================================================================
 
 //Burger
@@ -394,9 +412,6 @@ html.menu-open input {
       span {
         width: 0;
       }
-      &::before,
-      &::after {
-      }
       &::before {
         top: calc(50% - rem(1));
         transform: rotate(-45deg);
@@ -409,7 +424,7 @@ html.menu-open input {
   }
 
   @media (max-width: $mobile) {
-    width: rem(16);
-    height: rem(12);
+    width: rem(22);
+    height: rem(18);
   }
 }
