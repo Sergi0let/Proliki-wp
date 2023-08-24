@@ -73,6 +73,10 @@
       @media (max-width: $mobile) {
         font-size: rem(14);
       }
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
     @media (max-width: $mobile) {
       &:not(:last-child) {

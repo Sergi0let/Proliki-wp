@@ -619,6 +619,9 @@ h6 {
     font-size: 0.875rem;
   }
 }
+.top-footer__block li:hover {
+  text-decoration: underline;
+}
 @media (max-width: 47.99875em) {
   .top-footer__block:not(:last-child) {
     margin-bottom: 2rem;
@@ -664,12 +667,19 @@ h6 {
   }
 }
 .general-page__title {
-  text-align: center;
   max-width: 44.625rem;
+  text-align: center;
   padding: 0 1.25rem;
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.3;
+  transition: transform 0.8s ease 0s, opacity 0.8s ease 0.3s;
+  transform: translateX(100%);
+  opacity: 0;
+}
+.loaded .general-page__title {
+  opacity: 1;
+  transform: translateX(0%);
 }
 @media (max-width: 47.99875em) {
   .general-page__title {
@@ -783,4 +793,9 @@ h6 {
   .list-class__title {
     font-size: 0.875rem;
   }
+}
+
+.indicator-alphabet {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
