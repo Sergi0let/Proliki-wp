@@ -23,5 +23,3 @@ checkIfInView("");
 window.addEventListener("scroll", checkIfInView);
 
 //-----------------------
-
-function multyTab() {}

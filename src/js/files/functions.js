@@ -515,8 +515,6 @@ export function menuInit() {
       if (bodyLockStatus && e.target.closest(".icon-menu")) {
         bodyLockToggle();
         document.documentElement.classList.toggle("menu-open");
-      } else {
-        document.documentElement.classList.remove("menu-open");
       }
     });
   }
