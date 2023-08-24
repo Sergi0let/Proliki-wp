@@ -7,7 +7,7 @@
 	<meta name="format-detection" content="telephone=no" />
 	<link rel="manifest" href="/manifest.json" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230824111828" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230824124518" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -114,32 +114,85 @@
 				</div>
 
 				<div class="indicator-alphabet">
-					<div data-tabs class="alphabet tabs">
-						<nav data-tabs-titles class="alphabet__nav tabs__navigation">
-							<button type="button" class="alphabet__title tabs__title _tab-active">
+					<div data-tabs class="alphabet">
+						<nav data-tabs-titles class="alphabet__nav">
+							<button type="button" class="alphabet__title _tab-active">
 								Препараты
 							</button>
-							<button type="button" class="alphabet__title tabs__title">
+							<button type="button" class="alphabet__title">
 								Производители
 							</button>
-							<button type="button" class="alphabet__title tabs__title">
+							<button type="button" class="alphabet__title">
 								Активные вещества
 							</button>
 						</nav>
-						<div data-tabs-body class="alphabet__content tabs__content">
-							<div class="alphabet__body tabs__body">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ut
-								ipsum iusto quisquam molestiae, totam velit ea nihil, saepe
-								corrupti reiciendis consequuntur quam commodi quibusdam
-								obcaecati vero aperiam! Recusandae, quae!
+						<div data-tabs-body class="alphabet__content">
+							<div class="alphabet__body">
+								<!-- nested tabs -->
+								<div data-tabs class="tabs-control">
+									<nav data-tabs-titles class="tabs-control__navigation">
+										<button type="button" class="tabs-control__title _tab-active">
+											АБВ
+										</button>
+										<button type="button" class="tabs-control__title">
+											АВС
+										</button>
+										<button type="button" class="tabs-control__title">
+											123
+										</button>
+									</nav>
+									<div data-tabs-body class="tabs-control__content">
+										<div class="tabs-control__body preparat">
+											<a href="#" class="preparat__link">А</a>
+											<a href="#" class="preparat__link">Б</a>
+											<a href="#" class="preparat__link">В</a>
+											<a href="#" class="preparat__link">Г</a>
+											<a href="#" class="preparat__link">Д</a>
+											<a href="#" class="preparat__link">Е</a>
+											<a href="#" class="preparat__link">Є</a>
+											<a href="#" class="preparat__link">Ж</a>
+											<a href="#" class="preparat__link">З</a>
+											<a href="#" class="preparat__link">И</a>
+											<a href="#" class="preparat__link">Й</a>
+											<a href="#" class="preparat__link">І</a>
+											<a href="#" class="preparat__link">Ї</a>
+											<a href="#" class="preparat__link">К</a>
+											<a href="#" class="preparat__link">Л</a>
+											<a href="#" class="preparat__link">М</a>
+											<a href="#" class="preparat__link">Н</a>
+											<a href="#" class="preparat__link">О</a>
+											<a href="#" class="preparat__link">П</a>
+											<a href="#" class="preparat__link">Р</a>
+											<a href="#" class="preparat__link">С</a>
+											<a href="#" class="preparat__link">Т</a>
+											<a href="#" class="preparat__link">У</a>
+											<a href="#" class="preparat__link">Ф</a>
+											<a href="#" class="preparat__link">Х</a>
+											<a href="#" class="preparat__link">Ц</a>
+											<a href="#" class="preparat__link">Ч</a>
+											<a href="#" class="preparat__link">Ш</a>
+											<a href="#" class="preparat__link">Щ</a>
+											<a href="#" class="preparat__link">Ь</a>
+											<a href="#" class="preparat__link">Ю</a>
+											<a href="#" class="preparat__link">Я</a>
+										</div>
+										<div class="tabs-control__body">
+											Содержимое второго таба
+										</div>
+										<div class="tabs-control__body">
+											Содержимое третьего таба
+										</div>
+									</div>
+								</div>
+								<!--  -->
 							</div>
-							<div class="alphabet__body tabs__body">
+							<div class="alphabet__body">
 								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
 								Assumenda velit dolor pariatur commodi reprehenderit suscipit
 								excepturi quos eum sed, voluptas saepe unde sint error magni
 								aspernatur deleniti dolorum explicabo repellat.
 							</div>
-							<div class="alphabet__body tabs__body">
+							<div class="alphabet__body">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
 								voluptate alias reprehenderit, quasi, repudiandae qui est cum
 								officia nam quaerat accusantium repellendus quod neque
@@ -160,7 +213,7 @@
 				laboriosam reiciendis fugit incidunt quae possimus. Deserunt omnis
 			</div>
 		</main>
-		<footer class="footer animate-on-scroll">
+		<footer class="footer">
 			<div class="footer__container">
 				<div class="footer__top top-footer">
 					<article class="top-footer__block">
@@ -235,7 +288,7 @@
 	</div>
 </div>
  -->
-	<script src="js/app.min.js?_v=20230824111828"></script>
+	<script src="js/app.min.js?_v=20230824124518"></script>
 </body>
 
 </html>
