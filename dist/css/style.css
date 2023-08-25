@@ -139,12 +139,21 @@ h6 {
   box-shadow: 0px 0.25rem 0.75rem 0px rgba(0, 0, 0, 0.1);
   z-index: 40;
 }
+.header__container.hide-head {
+  height: 40px;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
 
 .top-head {
   display: grid;
   column-gap: 0.75rem;
   grid-template-columns: 12.3125rem 1fr 4.875rem minmax(2.5rem, 11.4375rem) 5.875rem;
   padding: 1rem 0;
+  transition: transform 0.3s, height 0.3s;
+}
+.top-head.hide-head {
+  transform: translateY(-50%);
 }
 @media (max-width: 72.5em) {
   .top-head {
@@ -332,11 +341,16 @@ h6 {
   content: "";
   position: absolute;
   top: 50%;
-  left: 6%;
+  left: 7%;
   width: 1rem;
   height: 0.625rem;
   transform: translateY(-50%);
   background: url("../img/header/uk-flag.svg") center no-repeat;
+}
+@media (max-width: 47.99875em) {
+  .lang__group._ukr::before {
+    left: 14%;
+  }
 }
 @media (max-width: 47.99875em) {
   .lang__group {
@@ -807,9 +821,11 @@ h6 {
   align-items: center;
   justify-content: center;
   padding: 2.5rem 0.5rem;
+  opacity: 0;
+  transform: translateY(80px);
   background: #f7f8fd;
   border-radius: 1.5rem;
-  transition: background 0.3s ease 0.2s;
+  transition: background 0.3s ease 0.2s, opacity 0.3s ease, transform 0.3s ease;
 }
 @supports (padding-top: clamp( 1rem , 0.4285714286rem  +  2.8571428571vw , 2.5rem )) {
   .list-class__item {
@@ -840,6 +856,22 @@ h6 {
 }
 .list-class__item:hover .list-class__title {
   color: #202227;
+}
+.loaded .list-class__item {
+  opacity: 1;
+  transform: translateY(0);
+}
+.list-class__item:first-child {
+  transition-delay: 0.2s;
+}
+.list-class__item:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.list-class__item:nth-child(3) {
+  transition-delay: 0.6s;
+}
+.list-class__item:nth-child(4) {
+  transition-delay: 0.8s;
 }
 .list-class__img {
   margin-bottom: 1.5rem;
@@ -1272,15 +1304,4 @@ h6 {
 .popular-spollers__body li:hover {
   text-decoration: underline;
   color: #3b009a;
-}
-
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.animate-on-scroll.show {
-  opacity: 1;
-  transform: translateY(0);
 }

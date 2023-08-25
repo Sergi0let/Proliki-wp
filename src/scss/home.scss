@@ -53,8 +53,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     padding: rem(40) rem(8);
+    opacity: 0;
+    transform: translateY(80px);
 
     @include adaptiveValue("padding-top", 40, 16);
     @include adaptiveValue("padding-bottom", 40, 16);
@@ -62,13 +63,34 @@
     background: $bgLightColor;
     border-radius: rem(24);
 
-    transition: background 0.3s ease 0.2s;
+    transition:
+      background 0.3s ease 0.2s,
+      opacity 0.3s ease,
+      transform 0.3s ease;
 
     &:hover {
       background: $strokeColor;
       .list-class__title {
         color: $mainColor;
       }
+    }
+
+    .loaded & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:first-child {
+      transition-delay: 0.2s;
+    }
+    &:nth-child(2) {
+      transition-delay: 0.4s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.6s;
+    }
+    &:nth-child(4) {
+      transition-delay: 0.8s;
     }
   }
   &__img {
@@ -444,16 +466,4 @@
       }
     }
   }
-}
-
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-.animate-on-scroll.show {
-  opacity: 1;
-  transform: translateY(0);
 }
