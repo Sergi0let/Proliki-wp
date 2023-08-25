@@ -6,9 +6,12 @@ import { flsModules } from "./modules.js";
 function handleScroll() {
   const headerTop = document.querySelector(".top-head");
   const headerContainer = document.querySelector(".header__container");
+  const currentURL = window.location.href;
+  const parts = currentURL.split("/");
+  const lastPart = parts[parts.length - 1].replace(".html", "");
 
   // Перевіряємо чи це головна сторінка (ваш умовний шлях до головної сторінки)
-  if (window.location.pathname === "/" && window.innerWidth <= 768) {
+  if ((lastPart === "" || lastPart === "index") && window.innerWidth <= 768) {
     // Перевіряємо поточне положення прокрутки
     if (window.scrollY >= 40) {
       // Якщо прокрутка більше або рівна 40px, ховаємо елементи з плавним ефектом

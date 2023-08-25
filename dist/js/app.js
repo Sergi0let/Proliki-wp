@@ -372,7 +372,10 @@
     function handleScroll() {
         const headerTop = document.querySelector(".top-head");
         const headerContainer = document.querySelector(".header__container");
-        if (window.location.pathname === "/" && window.innerWidth <= 768) if (window.scrollY >= 40) {
+        const currentURL = window.location.href;
+        const parts = currentURL.split("/");
+        const lastPart = parts[parts.length - 1].replace(".html", "");
+        if ((lastPart === "" || lastPart === "index") && window.innerWidth <= 768) if (window.scrollY >= 40) {
             headerTop.style.transform = "translateY(-50%)";
             headerContainer.style.height = "40px";
             headerContainer.style.paddingBottom = "10px";
