@@ -7,7 +7,7 @@
 	<meta name="format-detection" content="telephone=no" />
 	<link rel="manifest" href="/manifest.json" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230824221954" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230825160735" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -25,7 +25,7 @@
 		<header class="header">
 			<div class="header__container">
 				<div class="top-head">
-					<a href="#" class="top-head__logo">
+					<a href="/index.html" class="top-head__logo">
 						<img src="img/header/logo.svg" alt="Proliki logo" />
 					</a>
 					<form class="top-head__form" action="">
@@ -37,8 +37,16 @@
 					</button>
 					<button class="top-head__see">Для слабозорих</button>
 					<div class="top-head__buttons">
-						<button>UA</button>
-						<button>RU</button>
+						<div class="lang">
+							<div class="lang__group _ukr">
+								<input type="radio" name="lg" />
+								<label for="lg">UA</label>
+							</div>
+							<div class="lang__group">
+								<input type="radio" name="lg" />
+								<label for="lg">RU</label>
+							</div>
+						</div>
 					</div>
 					<div class="top-head__burger">
 						<div class="icon-menu"><span></span></div>
@@ -46,17 +54,27 @@
 				</div>
 				<nav class="menu-head">
 					<ul class="menu-head__list">
-						<li class="menu-head__item">
-							<a href="#">ATХ классификация</a>
+						<li class="menu-head__item" data-menu="class">
+							<a href="class.html">ATХ классификация</a>
 						</li>
-						<li class="menu-head__item ac-link">
-							<a href="#">Активні речовини</a>
+						<li class="menu-head__item" data-menu="substances">
+							<a href="substances.html">Активні речовини</a>
 						</li>
-						<li class="menu-head__item"><a href="#">Алфавітний показник</a></li>
-						<li class="menu-head__item"><a href="#">Виробники</a></li>
-						<li class="menu-head__item"><a href="#">Новини</a></li>
-						<li class="menu-head__item"><a href="#">Про нас</a></li>
-						<li class="menu-head__item"><a href="#">Контакти</a></li>
+						<li class="menu-head__item" data-menu="alphabet">
+							<a href="alphabet.html">Алфавітний показник</a>
+						</li>
+						<li class="menu-head__item" data-menu="manufactures">
+							<a href="manufactures.html">Виробники</a>
+						</li>
+						<li class="menu-head__item" data-menu="news">
+							<a href="news.html">Новини</a>
+						</li>
+						<li class="menu-head__item" data-menu="about">
+							<a href="about.html">Про нас</a>
+						</li>
+						<li class="menu-head__item" data-menu="contacts">
+							<a href="contacts.html">Контакти</a>
+						</li>
 					</ul>
 				</nav>
 				<div class="menu-drop">
@@ -64,13 +82,21 @@
 						<img class="menu-drop__logo" src="img/header/logo.svg" alt="logo" />
 					</div>
 					<ul class="menu-drop__list">
-						<li class="menu-drop__item"><a href="#">ATХ классификация</a></li>
-						<li class="menu-drop__item"><a href="#">Активні речовини</a></li>
-						<li class="menu-drop__item"><a href="#">Алфавітний показник</a></li>
-						<li class="menu-drop__item"><a href="#">Виробники</a></li>
-						<li class="menu-drop__item"><a href="#">Новини</a></li>
-						<li class="menu-drop__item"><a href="#">Про нас</a></li>
-						<li class="menu-drop__item"><a href="#">Контакти</a></li>
+						<li class="menu-drop__item">
+							<a href="class.html">ATХ классификация</a>
+						</li>
+						<li class="menu-drop__item">
+							<a href="substances.html">Активні речовини</a>
+						</li>
+						<li class="menu-drop__item">
+							<a href="alphabet.html">Алфавітний показник</a>
+						</li>
+						<li class="menu-drop__item">
+							<a href="manufactures.html">Виробники</a>
+						</li>
+						<li class="menu-drop__item"><a href="news.html">Новини</a></li>
+						<li class="menu-drop__item"><a href="about.html">Про нас</a></li>
+						<li class="menu-drop__item"><a href="contacts.html">Контакти</a></li>
 					</ul>
 					<a class="menu-drop__see" href="#">
 						<img src="img/header/see.svg" alt="low see" /><span>
@@ -81,16 +107,6 @@
 
 		<main class="page">
 			<div class="page__container">
-				<div class="lang">
-					<div class="radio_group _ukr">
-						<input type="radio" name="like" />
-						<label for="like">UA </label>
-					</div>
-					<div class="radio_group">
-						<input type="radio" name="like" />
-						<label for="like">RU </label>
-					</div>
-				</div>
 				<section class="general-page">
 					<h1 class="general-page__title">
 						Надійний довідник в медичному світі: все про ліки тут
@@ -439,7 +455,7 @@
 					</div>
 
 					<div class="news__body">
-						<a href="#" class="new">
+						<a href="#" class="new animate-on-scroll">
 							<div class="new__img-ibg">
 								<picture><source srcset="img/news/1.webp" type="image/webp"><img src="img/news/1.jpg" alt="news one" /></picture>
 							</div>
@@ -450,7 +466,7 @@
 							</div>
 							<time datetime="2021-03-02">2 березня 2021</time>
 						</a>
-						<a href="#" class="new">
+						<a href="#" class="new animate-on-scroll">
 							<div class="new__img-ibg">
 								<picture><source srcset="img/news/2.webp" type="image/webp"><img src="img/news/2.jpg" alt="news one" /></picture>
 							</div>
@@ -460,7 +476,7 @@
 							</div>
 							<time datetime="2021-03-02">2 березня 2021</time>
 						</a>
-						<a href="#" class="new">
+						<a href="#" class="new animate-on-scroll">
 							<div class="new__img-ibg">
 								<picture><source srcset="img/news/3.webp" type="image/webp"><img src="img/news/3.jpg" alt="news one" /></picture>
 							</div>
@@ -624,7 +640,7 @@
 	</div>
 </div>
  -->
-	<script src="js/app.min.js?_v=20230824221954"></script>
+	<script src="js/app.min.js?_v=20230825160735"></script>
 </body>
 
 </html>

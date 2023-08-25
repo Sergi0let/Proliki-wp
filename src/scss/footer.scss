@@ -66,6 +66,8 @@
 
     li {
       color: $blueColor;
+      transition: color 0.3s ease;
+
       &:not(:last-child) {
         margin-bottom: rem(16);
       }
@@ -76,6 +78,7 @@
 
       &:hover {
         text-decoration: underline;
+        color: $blueHoverColor;
       }
     }
     @media (max-width: $mobile) {

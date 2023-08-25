@@ -143,7 +143,7 @@ h6 {
 .top-head {
   display: grid;
   column-gap: 0.75rem;
-  grid-template-columns: 12.3125rem 1fr 4.875rem minmax(2.5rem, 11.4375rem) 8.75rem;
+  grid-template-columns: 12.3125rem 1fr 4.875rem minmax(2.5rem, 11.4375rem) 5.875rem;
   padding: 1rem 0;
 }
 @media (max-width: 72.5em) {
@@ -250,41 +250,8 @@ h6 {
 .top-head__buttons {
   overflow: hidden;
   align-self: center;
-  z-index: 5;
-}
-.top-head__buttons button {
-  padding: 0.6875rem;
-  transition: background-color 0.3s ease 0s;
-}
-.top-head__buttons button:first-child {
-  transform: translateX(0.25rem);
-  border-radius: 0.75rem 0 0 0.75rem;
-  padding-left: 2rem;
-  background: url("../img/header/uk-flag.svg") 8px no-repeat;
-  background-color: #f7f8fd;
-}
-@media (max-width: 47.99875em) {
-  .top-head__buttons button:first-child {
-    border-radius: 0.5rem 0 0 0.5rem;
-    padding-left: 2rem;
-  }
-}
-.top-head__buttons button:last-child {
-  border-radius: 0 0.75rem 0.75rem 0;
-  background-color: #f7f8fd;
-}
-@media (max-width: 47.99875em) {
-  .top-head__buttons button:last-child {
-    border-radius: 0 0.5rem 0.5rem 0;
-  }
-}
-.top-head__buttons button:hover {
-  background-color: #eaf2fa;
-}
-@media (max-width: 47.99875em) {
-  .top-head__buttons button {
-    font-size: 0.875rem;
-  }
+  position: relative;
+  z-index: 99;
 }
 .top-head__burger {
   display: none;
@@ -293,7 +260,8 @@ h6 {
   border-radius: 0.75rem;
   transition: background 0.3s ease 0s;
   align-self: center;
-  z-index: 5;
+  position: relative;
+  z-index: 99;
 }
 .top-head__burger:hover {
   background: #eaf2fa;
@@ -313,6 +281,91 @@ h6 {
     padding: 0.5rem;
     border-radius: 0.5rem;
   }
+}
+
+.lang {
+  display: flex;
+}
+.lang__group {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 2.8125rem;
+  background-color: #f7f8fd;
+  transition: background-color 0.3s ease 0s;
+}
+.lang__group:hover {
+  background-color: #eaf2fa;
+}
+.lang__group:hover input[type=radio] + label {
+  color: #0058e9;
+}
+.lang__group:first-child {
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+@media (max-width: 47.99875em) {
+  .lang__group:first-child {
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+}
+.lang__group:last-child {
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+@media (max-width: 47.99875em) {
+  .lang__group:last-child {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+}
+.lang__group._ukr {
+  position: relative;
+  width: 3.25rem;
+  text-align: right;
+}
+.lang__group._ukr label {
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+}
+.lang__group._ukr::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  width: 1rem;
+  height: 0.625rem;
+  transform: translateY(-50%);
+  background: url("../img/header/uk-flag.svg") center no-repeat;
+}
+@media (max-width: 47.99875em) {
+  .lang__group {
+    font-size: 0.875rem;
+  }
+}
+.lang__group input[type=radio] {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+.lang__group input[type=radio] + label {
+  color: #d3dce9;
+  transition: color 0.3s ease 0s;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.lang__group input[type=radio]:checked + label {
+  color: #0058e9;
 }
 
 .menu-head {
@@ -475,6 +528,7 @@ h6 {
   height: 100%;
   background: rgba(34, 89, 180, 0.2);
   opacity: 0;
+  display: none;
 }
 .menu-open .menu-drop {
   right: 0;
@@ -482,6 +536,7 @@ h6 {
 }
 .menu-open .menu-drop::before {
   opacity: 1;
+  display: block;
 }
 
 .icon-menu {
@@ -627,6 +682,7 @@ h6 {
 }
 .top-footer__block li {
   color: #0058e9;
+  transition: color 0.3s ease;
 }
 .top-footer__block li:not(:last-child) {
   margin-bottom: 1rem;
@@ -638,6 +694,7 @@ h6 {
 }
 .top-footer__block li:hover {
   text-decoration: underline;
+  color: #3b009a;
 }
 @media (max-width: 47.99875em) {
   .top-footer__block:not(:last-child) {
@@ -876,6 +933,10 @@ h6 {
 .alphabet__title:not(:last-child) {
   margin-right: 0.25rem;
 }
+.alphabet__title:hover {
+  color: #fff;
+  background: #3b009a;
+}
 .alphabet__title._tab-active {
   background: #4d5156;
   color: #fff;
@@ -997,6 +1058,14 @@ h6 {
   font-weight: 400;
   line-height: 1.6;
   color: #0058e9;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  border-radius: 0.75rem;
+  transition: color 0.3s, background 0.3s;
+}
+.news__link:hover {
+  color: #fff;
+  background: #3b009a;
 }
 @media (max-width: 47.99875em) {
   .news__link {
@@ -1037,11 +1106,13 @@ h6 {
   max-width: 22.5rem;
   min-width: 9.8125rem;
   line-height: 1.6;
+  overflow-y: hidden;
 }
 .new__img-ibg {
   min-height: 6.5625rem;
   padding-bottom: 67%;
   border-radius: 1.5rem;
+  overflow: hidden;
 }
 @supports (border-radius: clamp( 0.75rem , 0.4642857143rem  +  1.4285714286vw , 1.5rem )) {
   .new__img-ibg {
@@ -1054,6 +1125,17 @@ h6 {
       0.75rem + 0.75 * (100vw - 20rem) / 52.5
     );
   }
+}
+.new__img-ibg::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: bottom 0.3s;
+  border-radius: 1.5rem;
+  left: 0;
+  bottom: -100%;
+  background: rgba(34, 89, 180, 0.2);
 }
 .new__category {
   padding-top: 1.5rem;
@@ -1072,6 +1154,7 @@ h6 {
   color: #000;
   font-size: 1.125rem;
   font-weight: 500;
+  transition: color 0.3s;
 }
 @media (max-width: 47.99875em) {
   .new__description {
@@ -1088,6 +1171,22 @@ h6 {
   .new time {
     font-size: 0.875rem;
   }
+}
+.new:first-child {
+  transition-delay: 0.2s;
+}
+.new:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.new:last-child {
+  transition-delay: 0.6s;
+}
+.new:hover .new__img-ibg::after {
+  bottom: 0;
+}
+.new:hover .new__description {
+  color: #3b009a;
+  text-decoration: underline;
 }
 
 .popular {
@@ -1168,69 +1267,20 @@ h6 {
   font-size: 1rem;
   font-weight: 400;
   color: #0058e9;
+  transition: color 0.3s ease;
+}
+.popular-spollers__body li:hover {
+  text-decoration: underline;
+  color: #3b009a;
 }
 
-.lang {
-  display: flex;
-  overflow: hidden;
-  align-self: center;
-  z-index: 5;
-}
-
-.radio_group {
-  width: auto;
-  position: relative;
-  text-align: center;
-  background: red;
-  padding: 0.6875rem;
-  transition: background-color 0.3s ease 0s;
-  font-size: 1rem;
-  font-weight: 800;
-  line-height: 1.6;
-}
-.radio_group._ukr {
-  position: relative;
-  padding-left: 3.125rem;
-}
-.radio_group._ukr::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1rem;
-  height: 0.625rem;
-  transform: translateY(50%);
-  background: url("../img/header/uk-flag.svg") center no-repeat;
-}
-@media (max-width: 47.99875em) {
-  .radio_group {
-    font-size: 0.875rem;
-  }
-}
-
-.radio_group input[type=radio] {
+.animate-on-scroll {
   opacity: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  margin: 0;
-  padding: 0;
-  z-index: 1;
-  cursor: pointer;
+  transform: translateY(30px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.radio_group input[type=radio] + label {
-  color: #95a5a6;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: scale(0.8);
-}
-
-.radio_group input[type=radio]:checked + label {
-  color: #3498db;
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
 }
