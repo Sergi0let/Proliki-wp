@@ -4,8 +4,131 @@
   <body>
     <div class="wrapper">
       @@include('html/_header.htm',{})
-      <main class="page">
-        <div class="page__container"></div>
+      <main class="contacts">
+        <div class="contacts__container">
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs__item"><a href="index.html">Proliki</a></li>
+            <li class="breadcrumbs__info">Вся інформаія про ліки тут!</li>
+          </ul>
+          <h1 class="contacts__title h1">Контакти</h1>
+
+          <div class="contacts__content">
+            <section class="contact">
+              <h2 class="contact__title h3">
+                Ми будемо раді почути Вас і відповісти на будь-які запитання або
+                пропозиції.
+              </h2>
+              <p class="contact__text">
+                Надішліть нам повідомлення через форму зворотного зв'язку на цій
+                сторінці або скористайтеся одним із наших зазначених способів
+                зв'язку.
+              </p>
+              <ul class="contact__list">
+                <li class="contact__item">
+                  <div class="contact__img">
+                    <img
+                      src="@img/contacts/mail.svg"
+                      alt="mail"
+                      height="28"
+                      width="28"
+                    />
+                  </div>
+                  <div class="contact__info">
+                    <div class="contact__label">Електронна пошта</div>
+                    <a href="mailto:info@proliki.ua">info@proliki.ua</a>
+                  </div>
+                </li>
+                <li class="contact__item">
+                  <div class="contact__img">
+                    <img
+                      src="@img/contacts/call.svg"
+                      alt="call for us"
+                      height="28"
+                      width="28"
+                    />
+                  </div>
+                  <div class="contact__info">
+                    <div class="contact__label">Телефон</div>
+                    <a href="tel:+380960171727">+380(96) 017-17-27</a>
+                  </div>
+                </li>
+                <li class="contact__item">
+                  <div class="contact__img">
+                    <img
+                      src="@img/contacts/telegram.svg"
+                      alt="telegram link"
+                      height="28"
+                      width="28"
+                    />
+                  </div>
+                  <div class="contact__info">
+                    <div class="contact__label">Telegram</div>
+                    <a href="tg://user?id=1056647112">@proliki</a>
+                  </div>
+                </li>
+                <li class="contact__item">
+                  <div class="contact__img">
+                    <img
+                      src="@img/contacts/viber.svg"
+                      alt="viber link"
+                      height="28"
+                      width="28"
+                    />
+                  </div>
+                  <div class="contact__info">
+                    <div class="contact__label">Viber</div>
+                    <a href="viber://chat?number=+380960241010"
+                      >+380(96) 024-10-10</a
+                    >
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <aside class="aside">
+              <form action="#" class="aside__form form">
+                <div class="form__item">
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    name="form[]"
+                    placeholder="Ім’я"
+                    class="form__input"
+                  />
+                </div>
+                <div class="form__item">
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    name="form[]"
+                    data-error="Невірний формат введення емейлу"
+                    data-required="email"
+                    placeholder="Електронна пошта"
+                    class="form__input"
+                  />
+                  <img
+                    class="_img-error"
+                    src="@img/contacts/error.svg"
+                    alt="error image"
+                    width="16"
+                    height="16"
+                  />
+                </div>
+                <div class="form__item">
+                  <textarea
+                    autocomplete="off"
+                    name="form[]"
+                    placeholder="Текст повідомлення"
+                    data-error="Ошибка"
+                    class="form__input"
+                  ></textarea>
+                </div>
+                <div class="form__button">
+                  <button type="submit" class="form__btn">Відправити</button>
+                </div>
+              </form>
+            </aside>
+          </div>
+        </div>
       </main>
       @@include('html/_footer.htm',{})
     </div>

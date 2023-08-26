@@ -64,14 +64,13 @@
     border-radius: rem(24);
 
     transition:
-      background 0.3s ease 0.2s,
-      opacity 0.3s ease,
-      transform 0.3s ease;
+      opacity 0.3s ease 0s,
+      box-shadow 0.3s ease 0s;
 
     &:hover {
-      background: $strokeColor;
+      box-shadow: 0px rem(4) rem(12) 0px rgba(0, 0, 0, 0.1);
       .list-class__title {
-        color: $mainColor;
+        @include hover-border;
       }
     }
 
@@ -403,7 +402,9 @@
     flex-direction: column;
   }
   &__item {
+    flex: 0 1 264px;
     @media (max-width: $mobile) {
+      flex: 0 1 auto;
       max-width: 100%;
       border-top: 1px solid $strokeColor;
     }

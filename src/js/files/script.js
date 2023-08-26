@@ -11,7 +11,7 @@ function handleScroll() {
     if (window.scrollY >= 40) {
       headerTop.classList.add("hide-head");
       headerContainer.classList.add("hide-head");
-    } else {
+    } else if (window.scrollY === 0) {
       headerTop.classList.remove("hide-head");
       headerContainer.classList.remove("hide-head");
     }

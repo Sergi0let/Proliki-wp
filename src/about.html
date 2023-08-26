@@ -4,129 +4,164 @@
   <body>
     <div class="wrapper">
       @@include('html/_header.htm',{})
-      <main class="contacts">
-        <div class="contacts__container">
-          <ul class="breadcrumbs">
-            <li class="breadcrumbs__item"><a href="index.html">Proliki</a></li>
-          </ul>
-          <h1 class="contacts__title h1">Контакти</h1>
+      <main class="about">
+        <div class="about__background">
+          <div class="about__container">
+            <ul class="breadcrumbs">
+              <li class="breadcrumbs__item">
+                <a href="index.html">Proliki</a>
+              </li>
+              <li class="breadcrumbs__info">Вся інформаія про ліки тут!</li>
+            </ul>
 
-          <div class="contacts__content">
-            <section class="contact">
-              <h2 class="contact__title h3">
-                Ми будемо раді почути Вас і відповісти на будь-які запитання або
-                пропозиції.
-              </h2>
-              <p class="contact__text">
-                Надішліть нам повідомлення через форму зворотного зв'язку на цій
-                сторінці або скористайтеся одним із наших зазначених способів
-                зв'язку.
-              </p>
-              <ul class="contact__list">
-                <li class="contact__item">
-                  <div class="contact__img">
-                    <img
-                      src="@img/contacts/mail.svg"
-                      alt="mail"
-                      height="28"
-                      width="28"
-                    />
+            <section class="about__block block-about">
+              <div class="block-about__content">
+                <div class="block-about__body">
+                  <h1 class="block-about__title h1">
+                    Допомагаємо знайти всю необхідну інформацію про ліки
+                  </h1>
+                  <p class="block-about__text">
+                    Ми створили цей сервіс для того, щоб зробити Ваше життя
+                    трохи простішим та зменшити ризик неправильного використання
+                    ліків
+                  </p>
+                  <form class="block-about__form" action="#" method="post">
+                    <div class="block-about__item">
+                      <input
+                        class="block-about__input"
+                        type="email"
+                        name="email"
+                        required="email"
+                        placeholder="Електронна пошта"
+                      />
+                      <input
+                        class="block-about__button"
+                        type="submit"
+                        value="Підписатися"
+                      />
+                    </div>
+                  </form>
+
+                  <div class="comment-about">
+                    <div class="comment-about__img">
+                      <img
+                        src="@img/about/user.png"
+                        alt="user photo"
+                        width="100"
+                        height="100"
+                      />
+                    </div>
+                    <div class="comment-about__body">
+                      <div class="comment-about__row"></div>
+                      <p class="comment-about__text">
+                        Proliki - мій новий улюблений довідник . Все, що мені
+                        потрібно, знаходиться тут, і все дуже зручно
+                        організовано.
+                      </p>
+                      <div class="comment-about__contacts">
+                        <span>Ben Pickleton</span>
+                        <a href="#"
+                          ><img
+                            src="@img/footer/facebook.png"
+                            width="24"
+                            height="24"
+                            alt="facebook"
+                          />
+                          <span>Facebook</span>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="contact__info">
-                    <div class="contact__label">Електронна пошта</div>
-                    <a href="mailto:info@proliki.ua">info@proliki.ua</a>
-                  </div>
-                </li>
-                <li class="contact__item">
-                  <div class="contact__img">
-                    <img
-                      src="@img/contacts/call.svg"
-                      alt="call for us"
-                      height="28"
-                      width="28"
-                    />
-                  </div>
-                  <div class="contact__info">
-                    <div class="contact__label">Телефон</div>
-                    <a href="tel:+380960171727">+380(96) 017-17-27</a>
-                  </div>
-                </li>
-                <li class="contact__item">
-                  <div class="contact__img">
-                    <img
-                      src="@img/contacts/telegram.svg"
-                      alt="telegram link"
-                      height="28"
-                      width="28"
-                    />
-                  </div>
-                  <div class="contact__info">
-                    <div class="contact__label">Telegram</div>
-                    <a href="tg://user?id=1056647112">@proliki</a>
-                  </div>
-                </li>
-                <li class="contact__item">
-                  <div class="contact__img">
-                    <img
-                      src="@img/contacts/viber.svg"
-                      alt="viber link"
-                      height="28"
-                      width="28"
-                    />
-                  </div>
-                  <div class="contact__info">
-                    <div class="contact__label">Viber</div>
-                    <a href="viber://chat?number=+380960241010"
-                      >+380(96) 024-10-10</a
-                    >
-                  </div>
-                </li>
-              </ul>
+                </div>
+              </div>
+              <div class="block-about__img"></div>
             </section>
-            <aside class="aside">
-              <form action="#" class="aside__form form">
-                <div class="form__item">
-                  <input
-                    autocomplete="off"
-                    type="text"
-                    name="form[]"
-                    placeholder="Ім’я"
-                    class="form__input"
-                  />
-                </div>
-                <div class="form__item">
-                  <input
-                    autocomplete="off"
-                    type="text"
-                    name="form[]"
-                    data-error="Невірний формат введення емейлу"
-                    data-required="email"
-                    placeholder="Електронна пошта"
-                    class="form__input"
-                  />
-                  <img
-                    class="_img-error"
-                    src="@img/contacts/error.svg"
-                    alt="error image"
-                    width="16"
-                    height="16"
-                  />
-                </div>
-                <div class="form__item">
-                  <textarea
-                    autocomplete="off"
-                    name="form[]"
-                    placeholder="Текст повідомлення"
-                    data-error="Ошибка"
-                    class="form__input"
-                  ></textarea>
-                </div>
-                <div class="form__button">
-                  <button type="submit" class="form__btn">Відправити</button>
-                </div>
-              </form>
-            </aside>
           </div>
+        </div>
+        <div class="features">
+          <div class="features__container">
+            <article class="block-features">
+              <div class="block-features__image">
+                <img src="@img/about/features_1.svg" alt="information image" />
+              </div>
+              <div class="block-features__content">
+                <div class="block-features__info">
+                  <h2 class="block-features__title _count2 h2">
+                    Повна та достовірна інформація про ліки
+                  </h2>
+                  <div class="block-features__text">
+                    Опис препаратів містить такі важливі характеристики, як
+                    склад, показання для застосування, дозування,
+                    протипоказання, побічні ефекти, взаємодії з іншими ліками,
+                    термін придатності та інші важливі дані.
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="block-features _row">
+              <div class="block-features__image">
+                <img src="@img/about/features_2.svg" alt="information image" />
+              </div>
+              <div class="block-features__content">
+                <div class="block-features__info _row">
+                  <h2 class="block-features__title _count2 h2">
+                    Зручність використання
+                  </h2>
+                  <div class="block-features__text">
+                    <p>
+                      Proliki постійно оновлюється та містить найсвіжішу
+                      інформацію про ліки.
+                    </p>
+                    <p>
+                      Дані про нові ліки, зміни в інструкції з застосування та
+                      інші важливі оновлення доступні для користувачів негайно.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="block-features">
+              <div class="block-features__image">
+                <img src="@img/about/features_3.svg" alt="information image" />
+              </div>
+              <div class="block-features__content">
+                <div class="block-features__info">
+                  <h2 class="block-features__title _count2 h2">
+                    Актуальність інформації
+                  </h2>
+                  <div class="block-features__text">
+                    <p>
+                      Proliki постійно оновлюється та містить найсвіжішу
+                      інформацію про ліки.
+                    </p>
+                    <p>
+                      Дані про нові ліки, зміни в інструкції з застосування та
+                      інші важливі оновлення доступні для користувачів негайно.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="about__background _meta">
+          <section class="meta__container meta-block">
+            <div class="meta-block__title">Мета Proliki</div>
+            <div class="meta-block__text">
+              <p>
+                Хочемо зробити процес використання ліків більш зрозумілим та
+                безпечним для кожного.
+              </p>
+              <p>
+                Нам важливо, щоб Ви мали доступ до надійної та актуальної
+                інформації про ліки, щоб знизити ризик неправильного
+                використання та запобігти можливим ускладненням.
+              </p>
+            </div>
+          </section>
         </div>
       </main>
       @@include('html/_footer.htm',{})
