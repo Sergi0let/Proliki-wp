@@ -57,6 +57,32 @@
   }
 }
 
+// hover bottom border with middle start
+@mixin hover-border {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: rem(1);
+    background: $blueColor;
+    transition:
+      left 0.3s ease 0s,
+      width 0.3s ease 0s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+
 // Grids
 @mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
   display: grid;

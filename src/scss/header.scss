@@ -176,8 +176,8 @@
 .lang {
   display: flex;
   &__group {
-    width: 45px;
-    height: 45px;
+    width: rem(45);
+    height: rem(45);
 
     position: relative;
     text-align: center;
@@ -240,6 +240,8 @@
 
     @media (max-width: $mobile) {
       font-size: rem(14);
+      width: rem(42);
+      height: rem(42);
     }
   }
   &__group input[type="radio"] {

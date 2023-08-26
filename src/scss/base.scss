@@ -134,3 +134,51 @@
     font-size: rem(20);
   }
 }
+
+.h3 {
+  font-size: rem(28);
+  font-weight: 600;
+  line-height: 130%;
+  @media (max-width: $mobile) {
+    font-size: rem(20);
+  }
+}
+
+.h1 {
+  font-size: rem(40);
+  font-weight: 600;
+  line-height: 130%;
+  @media (max-width: $mobile) {
+    font-size: rem(32);
+  }
+}
+
+.breadcrumbs {
+  @include adaptiveValue("font-size", 16, 14);
+  color: $blueColor;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6;
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: rem(18);
+  transition: color 0.3s ease 0s;
+  @include block-padding-top;
+  padding-bottom: rem(16);
+  @include overflow-scroll;
+
+  a {
+    white-space: nowrap;
+    @include hover-border;
+  }
+  &__item {
+    &:not(:last-child) {
+      &::after {
+        content: "•";
+        color: $mainColor;
+        position: relative;
+        right: rem(-8);
+      }
+    }
+  }
+}

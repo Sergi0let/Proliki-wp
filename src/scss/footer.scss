@@ -76,9 +76,8 @@
         font-size: rem(14);
       }
 
-      &:hover {
-        text-decoration: underline;
-        color: $blueHoverColor;
+      a {
+        @include hover-border;
       }
     }
     @media (max-width: $mobile) {

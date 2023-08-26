@@ -459,10 +459,8 @@
       font-weight: 400;
       color: $blueColor;
       transition: color 0.3s ease;
-
-      &:hover {
-        text-decoration: underline;
-        color: $blueHoverColor;
+      a {
+        @include hover-border;
       }
     }
   }
