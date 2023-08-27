@@ -35,3 +35,39 @@ function addMenuActive() {
   });
 }
 addMenuActive();
+
+//========================================================================================================================================================
+function fadeInElementsOnScroll() {
+  // Отримуємо всі елементи, які ви хочете анімувати (наприклад, з класом "animate-on-scroll")
+  const elements = document.querySelectorAll(".animate-on-scroll");
+
+  // Функція, яка перевіряє, чи елемент з'явився на видимому екрані
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  // Функція, яка перевіряє, чи елементи повинні анімуватися при прокручуванні
+  function checkElements() {
+    elements.forEach((element) => {
+      if (isElementInViewport(element)) {
+        element.classList.add("visible"); // Додати клас "visible" для анімації
+      } else {
+        element.classList.remove("visible"); // Видалити клас "visible", якщо елемент виходить з видимого екрану
+      }
+    });
+  }
+
+  // Викликаємо функцію при завантаженні сторінки та при прокрутці
+  window.addEventListener("load", checkElements);
+  window.addEventListener("scroll", checkElements);
+}
+
+// Викличте цю функцію, коли сторінка завантажується
+fadeInElementsOnScroll();

@@ -1738,14 +1738,31 @@ h6 {
     flex-direction: column;
   }
 }
+.block-features__image {
+  position: relative;
+  left: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease 0s, left 0.3s ease 0s;
+}
 .block-features__image img {
   width: 100%;
+}
+.visible .block-features__image {
+  left: 0;
+  opacity: 1;
 }
 .block-features__content {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  right: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease 0s, right 0.3s ease 0s;
+}
+.visible .block-features__content {
+  right: 0;
+  opacity: 1;
 }
 .block-features__count {
   font-size: 64px;

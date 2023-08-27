@@ -245,8 +245,19 @@
   }
 
   &__image {
+    position: relative;
+    left: 50%;
+    opacity: 0;
+    transition:
+      opacity 0.3s ease 0s,
+      left 0.3s ease 0s;
     img {
       width: 100%;
+    }
+
+    .visible & {
+      left: 0;
+      opacity: 1;
     }
   }
 
@@ -255,6 +266,16 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    right: 50%;
+    opacity: 0;
+    transition:
+      opacity 0.3s ease 0s,
+      right 0.3s ease 0s;
+
+    .visible & {
+      right: 0;
+      opacity: 1;
+    }
   }
 
   &__count {
