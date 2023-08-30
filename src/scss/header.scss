@@ -46,7 +46,7 @@
 
   &__logo {
     align-self: center;
-    img {
+    svg {
       @media (max-width: $mobile) {
         width: rem(122);
       }
@@ -62,7 +62,7 @@
     display: grid;
     grid-template-columns: rem(50) 1fr;
 
-    img {
+    svg {
       align-self: center;
       justify-self: center;
     }
@@ -276,32 +276,32 @@
     font-size: rem(18);
     font-weight: 500;
     line-height: 1.6;
-  }
 
-  &__item {
-    position: relative;
-    padding-bottom: rem(16);
-    transition: color 0.3s ease 0s;
-    font-weight: 700;
+    li {
+      position: relative;
+      padding-bottom: rem(16);
+      transition: color 0.3s ease 0s;
+      font-weight: 700;
 
-    @include hover-border;
+      @include hover-border;
 
-    @media (any-hover: hover) {
-      &:hover {
-        color: $blueColor;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $blueColor;
+        }
       }
-    }
 
-    &.ac-link {
-      color: $blueHoverColor;
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: rem(2);
-        background: $blueHoverColor;
+      &.ac-link {
+        color: $blueHoverColor;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: rem(2);
+          background: $blueHoverColor;
+        }
       }
     }
   }
@@ -354,49 +354,49 @@
       padding-right: rem(15);
       padding-left: rem(15);
     }
-  }
 
-  &__item {
-    padding: rem(24) 0;
-    font-size: rem(18);
-    color: $blueColor;
-    font-weight: 500;
-    line-height: 1.6;
-    border-bottom: 1px solid $strokeColor;
-    position: relative;
-    opacity: 0;
-    transition:
-      right 0.3s ease 0s,
-      opacity 0.3s ease 0s;
+    li {
+      padding: rem(24) 0;
+      font-size: rem(18);
+      color: $blueColor;
+      font-weight: 500;
+      line-height: 1.6;
+      border-bottom: 1px solid $strokeColor;
+      position: relative;
+      opacity: 0;
+      transition:
+        right 0.3s ease 0s,
+        opacity 0.3s ease 0s;
 
-    @media (max-width: $mobile) {
-      min-width: 100%;
-      padding: rem(16) 0;
-      font-size: rem(16);
-    }
+      @media (max-width: $mobile) {
+        min-width: 100%;
+        padding: rem(16) 0;
+        font-size: rem(16);
+      }
 
-    &:nth-child(2) {
-      transition-delay: 0.2s;
-    }
-    &:nth-child(3) {
-      transition-delay: 0.3s;
-    }
-    &:nth-child(4) {
-      transition-delay: 0.4s;
-    }
-    &:nth-child(5) {
-      transition-delay: 0.5s;
-    }
-    &:nth-child(6) {
-      transition-delay: 0.6s;
-    }
-    &:nth-child(7) {
-      transition-delay: 0.7s;
-    }
+      &:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      &:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+      &:nth-child(5) {
+        transition-delay: 0.5s;
+      }
+      &:nth-child(6) {
+        transition-delay: 0.6s;
+      }
+      &:nth-child(7) {
+        transition-delay: 0.7s;
+      }
 
-    .menu-open & {
-      bottom: 0;
-      opacity: 1;
+      .menu-open & {
+        bottom: 0;
+        opacity: 1;
+      }
     }
   }
 

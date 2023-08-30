@@ -48,14 +48,12 @@
   @include adaptiveValue("padding-bottom", 32, 24);
   @include overflow-scroll;
 
-  &__item {
+  a {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: rem(40) rem(8);
-    opacity: 0;
-    transform: translateY(80px);
 
     @include adaptiveValue("padding-top", 40, 16);
     @include adaptiveValue("padding-bottom", 40, 16);
@@ -63,59 +61,37 @@
     background: $bgLightColor;
     border-radius: rem(24);
 
-    transition:
-      opacity 0.3s ease 0s,
-      box-shadow 0.3s ease 0s;
+    transition: box-shadow 0.3s ease 0s;
 
-    &:hover {
-      box-shadow: 0px rem(4) rem(12) 0px rgba(0, 0, 0, 0.1);
-      .list-class__title {
-        @include hover-border;
-      }
-    }
-
-    .loaded & {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    &:first-child {
-      transition-delay: 0.2s;
-    }
-    &:nth-child(2) {
-      transition-delay: 0.4s;
-    }
-    &:nth-child(3) {
-      transition-delay: 0.6s;
-    }
-    &:nth-child(4) {
-      transition-delay: 0.8s;
-    }
-  }
-  &__img {
-    margin-bottom: rem(24);
-    @include adaptiveValue("margin-bottom", 24, 4);
     img {
+      margin-bottom: rem(24);
+      @include adaptiveValue("margin-bottom", 24, 4);
       @include adaptiveValue("width", 80, 40);
       object-fit: cover;
     }
-  }
 
-  &__title {
-    color: $blueColor;
-    font-size: rem(18);
-    font-weight: 500;
-    line-height: 1.6;
-    text-align: center;
-    transition: color 0.3s ease 0s;
+    h2 {
+      color: $blueColor;
+      font-size: rem(18);
+      font-weight: 500;
+      line-height: 1.6;
+      text-align: center;
+      transition: color 0.3s ease 0s;
 
-    @media (max-width: $mobile) {
-      font-size: rem(14);
+      @media (max-width: $mobile) {
+        font-size: rem(14);
+      }
+    }
+    &:hover {
+      box-shadow: 0px rem(4) rem(12) 0px rgba(0, 0, 0, 0.1);
+      h2 {
+        @include hover-border;
+      }
     }
   }
 }
 
-.indicator-alphabet {
+.i-alphabet {
   @include block-padding-top;
   @include block-padding-bottom;
 
@@ -131,48 +107,45 @@
     flex-wrap: nowrap;
 
     @include overflow-scroll;
-  }
 
-  &__title {
-    padding: rem(8) rem(24);
-    background: $bgColor;
-    color: $blueColor;
-    font-size: rem(16);
-    font-weight: 400;
-    line-height: 1.6;
-    border-radius: rem(12) rem(12) 0 0;
-    white-space: nowrap;
-    transition:
-      color 0.3s ease 0s,
-      background 0.3s ease 0s;
-    &:not(:last-child) {
-      margin-right: rem(4);
-    }
-
-    &:hover {
-      color: #fff;
-      background: $blueHoverColor;
-    }
-
-    &._tab-active {
-      background: $blackSecondColor;
-      color: #fff;
-    }
-
-    @media (max-width: $mobile) {
-      padding: rem(8) rem(16);
-      font-size: rem(14);
+    button {
+      padding: rem(8) rem(24);
+      background: $bgColor;
+      color: $blueColor;
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: 1.6;
+      border-radius: rem(12) rem(12) 0 0;
+      white-space: nowrap;
+      transition:
+        color 0.3s ease 0s,
+        background 0.3s ease 0s;
       &:not(:last-child) {
         margin-right: rem(4);
+      }
+
+      &:hover {
+        color: #fff;
+        background: $blueHoverColor;
+      }
+
+      &._tab-active {
+        background: $blackSecondColor;
+        color: #fff;
+      }
+
+      @media (max-width: $mobile) {
+        padding: rem(8) rem(16);
+        font-size: rem(14);
+        &:not(:last-child) {
+          margin-right: rem(4);
+        }
       }
     }
   }
 
   &__content {
     padding-top: rem(24);
-  }
-
-  &__body {
   }
 }
 
@@ -183,7 +156,7 @@
     border-bottom: 1px solid $strokeColor;
   }
 
-  &__title {
+  button {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.6;
@@ -237,7 +210,7 @@
     grid-gap: rem(10);
   }
 
-  &__link {
+  a {
     padding: rem(7) rem(14);
     font-size: rem(16);
     font-weight: 500;
@@ -268,10 +241,7 @@
     }
   }
 
-  &__title {
-  }
-
-  &__link {
+  a {
     font-size: rem(16);
     font-weight: 400;
     line-height: 1.6;
@@ -285,7 +255,6 @@
 
     &:hover {
       color: #fff;
-      background: $blueHoverColor;
     }
     @media (max-width: $mobile) {
       font-size: rem(14);
