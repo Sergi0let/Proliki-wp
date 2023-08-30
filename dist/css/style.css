@@ -319,7 +319,7 @@ h6 {
 }
 .top-head__see {
   display: block;
-  background: #f7f8fd;
+  background: #edf0fa;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -345,7 +345,7 @@ h6 {
 .top-head__burger {
   display: none;
   padding: 0.875rem;
-  background: #f7f8fd;
+  background: #edf0fa;
   border-radius: 0.75rem;
   transition: background 0.3s ease 0s;
   align-self: center;
@@ -383,7 +383,7 @@ h6 {
   font-size: 1rem;
   font-weight: 800;
   line-height: 2.8125rem;
-  background-color: #f7f8fd;
+  background-color: #edf0fa;
   transition: background-color 0.3s ease 0s;
 }
 .lang__group:hover {
@@ -452,7 +452,7 @@ h6 {
   cursor: pointer;
 }
 .lang__group input[type=radio] + label {
-  color: #d3dce9;
+  color: #0058e9;
   transition: color 0.3s ease 0s;
   width: 100%;
   height: 100%;
@@ -461,7 +461,7 @@ h6 {
   top: 0;
 }
 .lang__group input[type=radio]:checked + label {
-  color: #0058e9;
+  color: #3b009a;
 }
 
 .menu-head {
@@ -705,7 +705,7 @@ h6 {
 }
 
 .footer {
-  background: #f7f8fd;
+  background: #edf0fa;
 }
 @supports (padding-top: clamp( 2rem , 1.619047619rem  +  1.9047619048vw , 3rem )) {
   .footer__top {
@@ -938,7 +938,7 @@ h6 {
   align-items: center;
   justify-content: center;
   padding: 2.5rem 0.5rem;
-  background: #f7f8fd;
+  background: #edf0fa;
   border-radius: 1.5rem;
   transition: box-shadow 0.3s ease 0s;
 }
@@ -993,6 +993,44 @@ h6 {
       2.5rem + 2.5 * (100vw - 20rem) / 52.5
     );
   }
+}
+.list-class a .class-img {
+  min-width: 100%;
+  margin-bottom: 1.5rem;
+  background: url("../img/classification/3.svg") center/contain no-repeat;
+}
+@supports (width: clamp( 2.5rem , 1.5476190476rem  +  4.7619047619vw , 5rem )) {
+  .list-class a .class-img {
+    width: clamp( 2.5rem , 1.5476190476rem  +  4.7619047619vw , 5rem );
+  }
+}
+@supports not (width: clamp( 2.5rem , 1.5476190476rem  +  4.7619047619vw , 5rem )) {
+  .list-class a .class-img {
+    width: calc(
+      2.5rem + 2.5 * (100vw - 20rem) / 52.5
+    );
+  }
+}
+@supports (height: clamp( 2.5rem , 1.5476190476rem  +  4.7619047619vw , 5rem )) {
+  .list-class a .class-img {
+    height: clamp( 2.5rem , 1.5476190476rem  +  4.7619047619vw , 5rem );
+  }
+}
+@supports not (height: clamp( 2.5rem , 1.5476190476rem  +  4.7619047619vw , 5rem )) {
+  .list-class a .class-img {
+    height: calc(
+      2.5rem + 2.5 * (100vw - 20rem) / 52.5
+    );
+  }
+}
+.list-class a .class-img._class {
+  background: url("../img/classification/4.svg") center/contain no-repeat;
+}
+.list-class a .class-img._alpha {
+  background: url("../img/classification/2.svg") center/contain no-repeat;
+}
+.list-class a .class-img._manuf {
+  background: url("../img/classification/1.svg") center/contain no-repeat;
 }
 .list-class a h2 {
   color: #0058e9;
@@ -1444,7 +1482,7 @@ h6 {
 .about__background {
   max-width: 1290px;
   margin: 0 auto;
-  background: #f7f8fd;
+  background: #edf0fa;
   border-radius: 0 0 1.5rem 1.5rem;
 }
 

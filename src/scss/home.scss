@@ -70,6 +70,23 @@
       object-fit: cover;
     }
 
+    .class-img {
+      @include adaptiveValue("width", 80, 40);
+      @include adaptiveValue("height", 80, 40);
+      min-width: 100%;
+      margin-bottom: rem(24);
+      background: url("../img/classification/3.svg") center/contain no-repeat;
+
+      &._class {
+        background: url("../img/classification/4.svg") center/contain no-repeat;
+      }
+      &._alpha {
+        background: url("../img/classification/2.svg") center/contain no-repeat;
+      }
+      &._manuf {
+        background: url("../img/classification/1.svg") center/contain no-repeat;
+      }
+    }
     h2 {
       color: $blueColor;
       font-size: rem(18);
@@ -82,6 +99,7 @@
         font-size: rem(14);
       }
     }
+
     &:hover {
       box-shadow: 0px rem(4) rem(12) 0px rgba(0, 0, 0, 0.1);
       h2 {
