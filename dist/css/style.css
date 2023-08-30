@@ -319,7 +319,7 @@ h6 {
 }
 .top-head__see {
   display: block;
-  background: #edf0fa;
+  background: #f4f4fc;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -345,7 +345,7 @@ h6 {
 .top-head__burger {
   display: none;
   padding: 0.875rem;
-  background: #edf0fa;
+  background: #f4f4fc;
   border-radius: 0.75rem;
   transition: background 0.3s ease 0s;
   align-self: center;
@@ -383,7 +383,7 @@ h6 {
   font-size: 1rem;
   font-weight: 800;
   line-height: 2.8125rem;
-  background-color: #edf0fa;
+  background-color: #f4f4fc;
   transition: background-color 0.3s ease 0s;
 }
 .lang__group:hover {
@@ -542,7 +542,7 @@ h6 {
 .menu-drop__wrapper {
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
 }
-.menu-drop__logo {
+.menu-drop svg {
   width: 7.8125rem;
   padding-top: 1.5rem;
   padding-bottom: 1.375rem;
@@ -551,13 +551,15 @@ h6 {
   transition: opacity 0.6s ease 0.8s;
 }
 @media (max-width: 47.99875em) {
-  .menu-drop__logo {
+  .menu-drop svg {
     padding-top: 0.6875rem;
     padding-bottom: 0.6875rem;
     transform: translateX(0.9375rem);
+    width: 5rem;
+    height: 3.4375rem;
   }
 }
-.menu-open .menu-drop__logo {
+.menu-open .menu-drop svg {
   opacity: 1;
 }
 .menu-drop__list {
@@ -705,7 +707,7 @@ h6 {
 }
 
 .footer {
-  background: #edf0fa;
+  background: #f4f4fc;
 }
 @supports (padding-top: clamp( 2rem , 1.619047619rem  +  1.9047619048vw , 3rem )) {
   .footer__top {
@@ -725,7 +727,7 @@ h6 {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.6;
-  color: #9f9f9f;
+  color: #202227;
 }
 @media (max-width: 47.99875em) {
   .footer__bottom {
@@ -938,7 +940,7 @@ h6 {
   align-items: center;
   justify-content: center;
   padding: 2.5rem 0.5rem;
-  background: #edf0fa;
+  background: #f4f4fc;
   border-radius: 1.5rem;
   transition: box-shadow 0.3s ease 0s;
 }
@@ -1482,7 +1484,7 @@ h6 {
 .about__background {
   max-width: 1290px;
   margin: 0 auto;
-  background: #edf0fa;
+  background: #f4f4fc;
   border-radius: 0 0 1.5rem 1.5rem;
 }
 

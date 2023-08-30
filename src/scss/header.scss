@@ -326,7 +326,7 @@
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
   }
 
-  &__logo {
+  svg {
     width: rem(125);
     padding-top: rem(24);
     padding-bottom: rem(22);
@@ -338,6 +338,8 @@
       padding-top: rem(11);
       padding-bottom: rem(11);
       transform: translateX(rem(15));
+      width: rem(80);
+      height: rem(55);
     }
 
     .menu-open & {

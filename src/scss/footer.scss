@@ -2,9 +2,6 @@
 .footer {
   background: $bgLightColor;
 
-  &__container {
-  }
-
   &__top {
     @include adaptiveValue("padding-top", 48, 32);
   }
@@ -15,7 +12,7 @@
     font-size: rem(16);
     font-weight: 500;
     line-height: 1.6;
-    color: $greyColor;
+    color: $mainColor;
 
     @media (max-width: $mobile) {
       font-size: rem(14);
